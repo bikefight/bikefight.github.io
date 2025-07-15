@@ -14,4 +14,8 @@ yarn-error.log*
 Thumbs.db
 
 # Environment
-.env path/to/your_key
+.env
+
+# Secrets
+*.pem
+*.key

@@ -2,6 +2,7 @@
 (function () {
   const userIdKey = 'tracker_userId';
   const userNameKey = 'tracker_userName';
+  const splashScreen = document.getElementById('splash-screen');
 
   // Generate or retrieve user id
   let userId = localStorage.getItem(userIdKey);
@@ -241,8 +242,14 @@
         updateMarker(u.id, u.lat, u.lng, u.name || 'Friend');
         updateMarkerLabel(u.id, u.name || 'Friend', u.updated);
       });
+      // Hide splash screen after first data load
+      splashScreen.classList.add('hidden');
     })
-    .catch(err => console.error('Failed to fetch users', err));
+    .catch(err => {
+      console.error('Failed to fetch users', err);
+      // Also hide splash screen on error to not block the page
+      splashScreen.classList.add('hidden');
+    });
 
   // WebSocket for real-time updates
   const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';

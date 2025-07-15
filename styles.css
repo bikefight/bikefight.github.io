@@ -1,8 +1,3 @@
-/* High-contrast map tint */
-.leaflet-pane.leaflet-shadow-pane {
-  filter: hue-rotate(330deg) saturate(3) brightness(1.2);
-}
-
 /* Ensure our UI controls are not affected by the map filter */
 .leaflet-control-container {
   filter: none;

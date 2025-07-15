@@ -5,15 +5,15 @@
 
   function initAppLogic() {
     // Now that the map view is set, we can add layers and data.
-    // Base layer (black and grey, no labels)
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+    // Base layer (Voyager theme, no labels)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
       subdomains: 'abcd',
       maxZoom: 20
     }).addTo(map);
     
-    // Labels layer (red)
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png', {
+    // Labels layer (Voyager theme)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_only_labels/{z}/{x}/{y}{r}.png', {
       attribution: '',
       pane: 'shadowPane', // Ensures labels are drawn on top, but below markers
       maxZoom: 20

@@ -1,4 +1,7 @@
+# render.yaml - A Blueprint for deploying the bikefight service
+
 services:
+  # This is the web service definition
   - type: web
     name: bikefight
     env: node
@@ -6,8 +9,7 @@ services:
     buildCommand: "npm install"
     startCommand: "node server.js"
     healthCheckPath: /
-
-disk:
-  - name: data
-    mountPath: /data
-    sizeGB: 1 
+  disks:
+    - name: data
+      mountPath: /data
+      sizeGB: 1 

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: bikefight
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "node server.js"
+    disks:
+      - name: data
+        mountPath: /data
+        sizeGB: 1
+    healthCheckPath: / 

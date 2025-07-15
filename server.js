@@ -7,7 +7,8 @@ const Database = require('better-sqlite3');
 const PORT = process.env.PORT || 3000;
 
 // Initialize SQLite database (persistent file)
-const db = new Database('data.db');
+const dbPath = process.env.RENDER ? '/data/data.db' : 'data.db';
+const db = new Database(dbPath);
 // Create table if it doesn't exist
 // id is string primary key, name optional, lat/lng real, updated timestamp
 

@@ -1,0 +1,195 @@
+html, body, #map {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  transition: all 0.2s;
+}
+
+.modal-content button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Challenge modal specific styles */
+#challengeModal .modal-content {
+  max-width: 500px;
+}
+
+#challengeModal p {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+#challengeModal img {
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  #challengeModal .modal-content {
+    max-width: 95%;
+    padding: 1.5rem;
+  }
+  
+  #challengeModal img {
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+  }
+  
+  #acceptBtn, #declineBtn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    min-width: 100px;
+  }
+  
+  .rating-group {
+    margin: 0.25rem 0;
+  }
+  
+  .star {
+    font-size: 20px;
+  }
+}
+
+#acceptBtn, #declineBtn {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  border-radius: 8px;
+  min-width: 120px;
+}
+
+#acceptBtn {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+}
+
+#declineBtn {
+  background: linear-gradient(135deg, #dc3545, #e74c3c);
+  color: white;
+}
+
+#acceptBtn:hover {
+  background: linear-gradient(135deg, #218838, #1ea085);
+}
+
+#declineBtn:hover {
+  background: linear-gradient(135deg, #c82333, #c0392b);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Override crosshair to white dot */
+.crosshair-icon {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid currentColor;
+}
+.crosshair-icon::before,
+.crosshair-icon::after {
+  content: none;
+}
+
+/* Tooltip style for always-on user label */
+.marker-label {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 12px;
+  border: none;
+  box-shadow: none;
+}
+.crosshair-icon.self {
+  color: #007bff; /* blue for self */
+}
+.crosshair-icon.friend {
+  color: #d9534f; /* red for friends */
+}
+
+/* Star rating */
+.star {
+  cursor: pointer;
+  font-size: 24px;
+  color: #ccc;
+}
+.star.selected {
+  color: gold;
+}
+.rating-group {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.rating-group .label {
+  width: 90px;
+}
+
+.xp {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  z-index: 1100;
+} 

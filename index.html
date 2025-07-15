@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Friend Locator</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="map"></div>
+  <div id="xpDisplay" class="xp">0xp</div>
+  <div id="namePrompt" class="modal hidden">
+    <div class="modal-content">
+      <h2>Enter your name</h2>
+      <input type="text" id="nameInput" placeholder="Your name"/>
+      <button id="saveNameBtn">Save</button>
+    </div>
+  </div>
+  
+  <div id="cameraModal" class="modal hidden">
+    <div class="modal-content" style="text-align:center">
+      <video id="cameraVideo" autoplay playsinline style="width:100%;max-width:400px;"></video>
+      <div style="margin-top:1rem">
+        <button id="captureBtn">Capture</button>
+        <button id="cancelCameraBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="challengeModal" class="modal hidden">
+    <div class="modal-content">
+      <p>IS THIS YOU BRUH?</p>
+      <img id="challengeImg" />
+      <div>
+        <div class="rating-group" data-field="beauty">
+          <span class="label">Beauty:</span>
+          <span class="star" data-val="1">★</span>
+          <span class="star" data-val="2">★</span>
+          <span class="star" data-val="3">★</span>
+          <span class="star" data-val="4">★</span>
+          <span class="star" data-val="5">★</span>
+        </div>
+        <div class="rating-group" data-field="creativity">
+          <span class="label">Creativity:</span>
+          <span class="star" data-val="1">★</span>
+          <span class="star" data-val="2">★</span>
+          <span class="star" data-val="3">★</span>
+          <span class="star" data-val="4">★</span>
+          <span class="star" data-val="5">★</span>
+        </div>
+        <div class="rating-group" data-field="creepiness">
+          <span class="label">Creepiness:</span>
+          <span class="star" data-val="1">★</span>
+          <span class="star" data-val="2">★</span>
+          <span class="star" data-val="3">★</span>
+          <span class="star" data-val="4">★</span>
+          <span class="star" data-val="5">★</span>
+        </div>
+      </div>
+      <div>
+        <button id="acceptBtn">Yes</button>
+        <button id="declineBtn">No</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <script src="script.js"></script>
+</body>
+</html> ~

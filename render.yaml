@@ -7,7 +7,7 @@ services:
     startCommand: "node server.js"
     healthCheckPath: /
 
-disks:
+disk:
   - name: data
     mountPath: /data
     sizeGB: 1 

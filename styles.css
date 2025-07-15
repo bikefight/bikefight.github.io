@@ -1,6 +1,11 @@
 /* High-contrast map tint */
-.leaflet-tile-pane {
-  filter: invert(1) hue-rotate(180deg) saturate(3) brightness(1.2) contrast(2);
+.leaflet-pane.leaflet-shadow-pane {
+  filter: hue-rotate(330deg) saturate(3) brightness(1.2);
+}
+
+/* Ensure our UI controls are not affected by the map filter */
+.leaflet-control-container {
+  filter: none;
 }
 
 html, body, #map {

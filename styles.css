@@ -1,3 +1,8 @@
+/* High-contrast map tint */
+.leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) saturate(3) brightness(1.2) contrast(2);
+}
+
 html, body, #map {
   height: 100%;
   margin: 0;

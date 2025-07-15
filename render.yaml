@@ -1,7 +1,6 @@
 # render.yaml - A Blueprint for deploying the bikefight service
 
 services:
-  # This is the web service definition
   - type: web
     name: bikefight
     env: node
